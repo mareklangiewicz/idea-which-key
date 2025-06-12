@@ -1,12 +1,13 @@
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    kotlin("jvm") version "2.1.0"
-    id("org.jetbrains.intellij.platform") version "2.3.0"
+    kotlin("jvm") version "2.2.0-RC2"
+    id("org.jetbrains.intellij.platform") version "2.6.0"
 }
 
 group = "eu.theblob42.idea.whichkey"
-version = "0.10.3"
+version = "0.11.2"
 
 repositories {
     mavenCentral()
@@ -19,9 +20,9 @@ dependencies {
     testImplementation("junit", "junit", "4.12")
 
     intellijPlatform {
-        intellijIdeaCommunity("2024.3")
+        intellijIdeaCommunity("2025.1")
         pluginVerifier()
-        plugins("IdeaVIM:2.20.0")
+        plugins("IdeaVIM:2.24.0")
 
         testFramework(TestFrameworkType.Platform)
     }
@@ -62,14 +63,14 @@ kotlin {
 
 tasks {
     compileKotlin {
-        kotlinOptions {
-            jvmTarget = "21"
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_21)
         }
     }
 
     compileTestKotlin {
-        kotlinOptions {
-            jvmTarget = "21"
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_21)
         }
     }
 }
