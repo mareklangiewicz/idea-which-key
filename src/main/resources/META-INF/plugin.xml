@@ -29,14 +29,14 @@
 
     <change-notes><![CDATA[
     <p>
-        <strong>0.10.3</strong>
+        <strong>0.66.6</strong>
     </p>
     <ul>
         <li>Fix plugin exception about ActionUpdateThread.OLD_EDT</li>
     </ul>
     ]]></change-notes>
 
-    <version>0.10.3</version>
+    <version>0.66.6</version>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>IdeaVIM</depends>
